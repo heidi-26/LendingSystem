@@ -13,7 +13,7 @@ def hi():
 
 def calculation():
     new_win = Toplevel(root)
-    new_win.geometry("400x300")
+    new_win.geometry("400x200")
     new_win.title("Calculation")
 
     mybutton = Button(new_win, text="HI", font=(
