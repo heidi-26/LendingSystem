@@ -5,65 +5,72 @@ from tkinter import ttk
 import tkinter as tk
 
 
+# Author: Alexander Caones
 
 def hi():
     print("Helooooooooooooooooooo")
 
+
 def calculation():
-    new_win= Toplevel(root)
+    new_win = Toplevel(root)
     new_win.geometry("400x300")
     new_win.title("Calculation")
-    
-    mybutton= Button(new_win, text="HI", font=("Arial", 10), command = hi).pack()
-    
-    
-    
+
+    mybutton = Button(new_win, text="HI", font=(
+        "Arial", 10), command=hi).pack()
+
 
 def Button_monthly():
     n = ent1.get()
     a = ent2.get()
     l = ent3.get()
     cb = combo_Box.get()
-    
-    if n == "" and l=="":
+
+    if n == "" and l == "":
         messagebox.showerror("Error", "Please fill both name and loan amount")
-    elif (int(l) >1000000):
-        messagebox.showerror("Error", "Please enter amount, P1 - P1,000,000 only")
+    elif (int(l) > 1000000):
+        messagebox.showerror(
+            "Error", "Please enter amount, P1 - P1,000,000 only")
     else:
         try:
             l = int(l)
-            my_name = Label(root, text="Name: ", font = ("Arial", 10, "bold"))
+            my_name = Label(root, text="Name: ", font=("Arial", 10, "bold"))
             my_name.grid(row=16, sticky=W)
-            my_name_result = Label(root, text = n, font=("Arial", 10))
+            my_name_result = Label(root, text=n, font=("Arial", 10))
             my_name_result.grid(row=16, column=1, sticky=W)
-            
-            my_address=Label(root, text="Address: ", font=("Arial", 10, "bold"))
+
+            my_address = Label(root, text="Address: ",
+                               font=("Arial", 10, "bold"))
             my_address.grid(row=17, sticky=W)
-            my_address_r = Label(root, text=a,font=("Arial", 10) )
+            my_address_r = Label(root, text=a, font=("Arial", 10))
             my_address_r.grid(row=17, column=1, sticky=W)
-            
-            my_loan_amount = Label(root, text="Loan Amount: ", font = ("Arial", 10, "bold"))
+
+            my_loan_amount = Label(
+                root, text="Loan Amount: ", font=("Arial", 10, "bold"))
             my_loan_amount.grid(row=18, sticky=W)
-            my_loan_amount_result = Label(root, text = l, font=("Arial", 10))
+            my_loan_amount_result = Label(root, text=l, font=("Arial", 10))
             my_loan_amount_result.grid(row=18, column=1, sticky=W)
-            
-            my_combo_Box= Label(root, text="Terms: ", font = ("Arial", 10, "bold"))
+
+            my_combo_Box = Label(root, text="Terms: ",
+                                 font=("Arial", 10, "bold"))
             my_combo_Box.grid(row=19, sticky=W)
-            my_combo_box_result = Label(root, text = cb, font=("Arial", 10))
+            my_combo_box_result = Label(root, text=cb, font=("Arial", 10))
             my_combo_box_result.grid(row=19, column=1, sticky=W)
-            
+
             my_top = Label(root, text="TOP: ", font=("Arial", 10, "bold"))
             my_top.grid(row=20, sticky=W)
-            
-            my_t = Label(root, text = "Monthly Interest",font=("Arial", 10))
+
+            my_t = Label(root, text="Monthly Interest", font=("Arial", 10))
             my_t.grid(row=20, column=1, sticky=W)
-            
-            my_interest=Label(root, text = "Interest", font=("Arial", 10, "bold"))
+
+            my_interest = Label(root, text="Interest",
+                                font=("Arial", 10, "bold"))
             my_interest.grid(row=21, sticky=W)
-            
-            process_button = Button(root, text="Calculation", font="Arial, 10", fg="white", bg="Green", command=calculation)
+
+            process_button = Button(
+                root, text="Calculation", font="Arial, 10", fg="white", bg="Green", command=calculation)
             process_button.grid(row=22, column=1, sticky=W)
-            
+
             l = int(ent3.get())
             if l <= 50000:
                 my_button_submit1 = Label(root, text="5%", font=("Arial", 10))
@@ -74,58 +81,64 @@ def Button_monthly():
             elif l >= 500001 and l <= 1000000:
                 my_button_submit1 = Label(root, text="7%", font=("Arial", 10))
                 my_button_submit1.grid(row=21, column=1, sticky=W)
-                        
+
         except ValueError:
-            messagebox.showerror("Error", "Only digits are allowed in loan amount field")
-            
-            
-    
+            messagebox.showerror(
+                "Error", "Only digits are allowed in loan amount field")
+
+
 def Button_quarterly():
     n = ent1.get()
     a = ent2.get()
     l = ent3.get()
     cb = combo_Box.get()
-    
-    if n == "" and l=="":
+
+    if n == "" and l == "":
         messagebox.showerror("Error", "Please fill both name and loan amount")
     else:
         try:
             l = int(l)
-            my_name = Label(root, text="Name: ", font = ("Arial", 10, "bold"))
+            my_name = Label(root, text="Name: ", font=("Arial", 10, "bold"))
             my_name.grid(row=16, sticky=W)
-            my_name_result = Label(root, text = n, font=("Arial", 10))
+            my_name_result = Label(root, text=n, font=("Arial", 10))
             my_name_result.grid(row=16, column=1, sticky=W)
-            
-            my_address=Label(root, text="Address: ", font=("Arial", 10, "bold"))
+
+            my_address = Label(root, text="Address: ",
+                               font=("Arial", 10, "bold"))
             my_address.grid(row=17, sticky=W)
-            my_address_r = Label(root, text=a,font=("Arial", 10) )
+            my_address_r = Label(root, text=a, font=("Arial", 10))
             my_address_r.grid(row=17, column=1, sticky=W)
-            
-            my_loan_amount = Label(root, text="Loan Amount: ", font = ("Arial", 10, "bold"))
+
+            my_loan_amount = Label(
+                root, text="Loan Amount: ", font=("Arial", 10, "bold"))
             my_loan_amount.grid(row=18, sticky=W)
-            my_loan_amount_result = Label(root, text = l, font=("Arial", 10))
+            my_loan_amount_result = Label(root, text=l, font=("Arial", 10))
             my_loan_amount_result.grid(row=18, column=1, sticky=W)
-            
-            my_combo_Box= Label(root, text="Terms: ", font = ("Arial", 10, "bold"))
+
+            my_combo_Box = Label(root, text="Terms: ",
+                                 font=("Arial", 10, "bold"))
             my_combo_Box.grid(row=19, sticky=W)
-            my_combo_box_result = Label(root, text = cb, font=("Arial", 10))
+            my_combo_box_result = Label(root, text=cb, font=("Arial", 10))
             my_combo_box_result.grid(row=19, column=1, sticky=W)
-            
+
             my_top = Label(root, text="TOP: ", font=("Arial", 10, "bold"))
             my_top.grid(row=20, sticky=W)
-            
-            my_t = Label(root, text = "Quarterly Interest",font=("Arial", 10))
+
+            my_t = Label(root, text="Quarterly Interest", font=("Arial", 10))
             my_t.grid(row=20, column=1, sticky=W)
-            
-            my_interest=Label(root, text = "Interest", font=("Arial", 10, "bold"))
+
+            my_interest = Label(root, text="Interest",
+                                font=("Arial", 10, "bold"))
             my_interest.grid(row=21, sticky=W)
-            
-            process_button = Button(root, text="Calculation", font="Arial, 10", fg="white", bg="Green", command=calculation)
+
+            process_button = Button(
+                root, text="Calculation", font="Arial, 10", fg="white", bg="Green", command=calculation)
             process_button.grid(row=22, column=1, sticky=W)
-            
+
             l = int(ent3.get())
             if l <= 1000:
-                my_button_submit2 = Label(root, text="No interest", font=("Arial", 10))
+                my_button_submit2 = Label(
+                    root, text="No interest", font=("Arial", 10))
                 my_button_submit2.grid(row=21, column=1, sticky=W)
             elif l >= 1001 and l <= 50000:
                 my_button_submit2 = Label(root, text="16%", font=("Arial", 10))
@@ -136,57 +149,64 @@ def Button_quarterly():
             elif l >= 500001 and l <= 1000000:
                 my_button_submit2 = Label(root, text="18%", font=("Arial", 10))
                 my_button_submit2.grid(row=21, column=1, sticky=W)
-            
+
         except ValueError:
-            messagebox.showerror("Error", "Only digits are allowed in loan amount field")
-            
-    
+            messagebox.showerror(
+                "Error", "Only digits are allowed in loan amount field")
+
+
 def Button_semi():
     n = ent1.get()
     a = ent2.get()
     l = ent3.get()
     cb = combo_Box.get()
-    
-    if n == "" and l=="":
+
+    if n == "" and l == "":
         messagebox.showerror("Error", "Please fill both name and loan amount")
     else:
-        try: 
-            l = int(l) 
-            my_name = Label(root, text="Name: ", font = ("Arial", 10, "bold"))
+        try:
+            l = int(l)
+            my_name = Label(root, text="Name: ", font=("Arial", 10, "bold"))
             my_name.grid(row=16, sticky=W)
-            my_name_result = Label(root, text = n, font=("Arial", 10))
+            my_name_result = Label(root, text=n, font=("Arial", 10))
             my_name_result.grid(row=16, column=1, sticky=W)
-            
-            my_address=Label(root, text="Address: ", font=("Arial", 10, "bold"))
+
+            my_address = Label(root, text="Address: ",
+                               font=("Arial", 10, "bold"))
             my_address.grid(row=17, sticky=W)
-            my_address_r = Label(root, text=a,font=("Arial", 10) )
+            my_address_r = Label(root, text=a, font=("Arial", 10))
             my_address_r.grid(row=17, column=1, sticky=W)
-            
-            my_loan_amount = Label(root, text="Loan Amount: ", font = ("Arial", 10, "bold"))
+
+            my_loan_amount = Label(
+                root, text="Loan Amount: ", font=("Arial", 10, "bold"))
             my_loan_amount.grid(row=18, sticky=W)
-            my_loan_amount_result = Label(root, text = l, font=("Arial", 10))
+            my_loan_amount_result = Label(root, text=l, font=("Arial", 10))
             my_loan_amount_result.grid(row=18, column=1, sticky=W)
-            
-            my_combo_Box= Label(root, text="Terms: ", font = ("Arial", 10, "bold"))
+
+            my_combo_Box = Label(root, text="Terms: ",
+                                 font=("Arial", 10, "bold"))
             my_combo_Box.grid(row=19, sticky=W)
-            my_combo_box_result = Label(root, text = cb, font=("Arial", 10))
+            my_combo_box_result = Label(root, text=cb, font=("Arial", 10))
             my_combo_box_result.grid(row=19, column=1, sticky=W)
-            
+
             my_top = Label(root, text="TOP: ", font=("Arial", 10, "bold"))
             my_top.grid(row=20, sticky=W)
-            
-            my_t = Label(root, text = "Semi-Annual Interest",font=("Arial", 10))
+
+            my_t = Label(root, text="Semi-Annual Interest", font=("Arial", 10))
             my_t.grid(row=20, column=1, sticky=W)
-            
-            my_interest=Label(root, text = "Interest", font=("Arial", 10, "bold"))
+
+            my_interest = Label(root, text="Interest",
+                                font=("Arial", 10, "bold"))
             my_interest.grid(row=21, sticky=W)
-            
+
             l = int(ent3.get())
             if l <= 1000:
-                my_button_submit3 = Label(root, text="No interest", font=("Arial", 10))
+                my_button_submit3 = Label(
+                    root, text="No interest", font=("Arial", 10))
                 my_button_submit3.grid(row=21, column=1, sticky=W)
             elif l >= 1001 and l <= 10000:
-                my_button_submit3 = Label(root, text="No interest", font=("Arial", 10))
+                my_button_submit3 = Label(
+                    root, text="No interest", font=("Arial", 10))
                 my_button_submit3.grid(row=21, column=1, sticky=W)
             elif l >= 10001 and l <= 100000:
                 my_button_submit3 = Label(root, text="19%", font=("Arial", 10))
@@ -197,65 +217,76 @@ def Button_semi():
             elif l >= 500001 and l <= 1000000:
                 my_button_submit3 = Label(root, text="21%", font=("Arial", 10))
                 my_button_submit3.grid(row=21, column=1, sticky=W)
-                
-            process_button = Button(root, text="Calculation", font="Arial, 10", fg="white", bg="Green", command=calculation)
+
+            process_button = Button(
+                root, text="Calculation", font="Arial, 10", fg="white", bg="Green", command=calculation)
             process_button.grid(row=22, column=1, sticky=W)
-    
+
         except ValueError:
-            messagebox.showerror("Error", "Only digits are allowed in loan amount field")
-    
+            messagebox.showerror(
+                "Error", "Only digits are allowed in loan amount field")
+
+
 def Button_annual():
     n = ent1.get()
     a = ent2.get()
     l = ent3.get()
     cb = combo_Box.get()
-    
-    if n == "" and l=="":
+
+    if n == "" and l == "":
         messagebox.showerror("Error", "Please fill both name and loan amount")
     else:
         try:
             l = int(l)
-            my_name = Label(root, text="Name: ", font = ("Arial", 10, "bold"))
+            my_name = Label(root, text="Name: ", font=("Arial", 10, "bold"))
             my_name.grid(row=16, sticky=W)
-            my_name_result = Label(root, text = n, font=("Arial", 10))
+            my_name_result = Label(root, text=n, font=("Arial", 10))
             my_name_result.grid(row=16, column=1, sticky=W)
-            
-            my_address=Label(root, text="Address: ", font=("Arial", 10, "bold"))
+
+            my_address = Label(root, text="Address: ",
+                               font=("Arial", 10, "bold"))
             my_address.grid(row=17, sticky=W)
-            my_address_r = Label(root, text=a,font=("Arial", 10) )
+            my_address_r = Label(root, text=a, font=("Arial", 10))
             my_address_r.grid(row=17, column=1, sticky=W)
-            
-            my_loan_amount = Label(root, text="Loan Amount: ", font = ("Arial", 10, "bold"))
+
+            my_loan_amount = Label(
+                root, text="Loan Amount: ", font=("Arial", 10, "bold"))
             my_loan_amount.grid(row=18, sticky=W)
-            my_loan_amount_result = Label(root, text = l, font=("Arial", 10))
+            my_loan_amount_result = Label(root, text=l, font=("Arial", 10))
             my_loan_amount_result.grid(row=18, column=1, sticky=W)
-            
-            my_combo_Box= Label(root, text="Terms: ", font = ("Arial", 10, "bold"))
+
+            my_combo_Box = Label(root, text="Terms: ",
+                                 font=("Arial", 10, "bold"))
             my_combo_Box.grid(row=19, sticky=W)
-            my_combo_box_result = Label(root, text = cb, font=("Arial", 10))
+            my_combo_box_result = Label(root, text=cb, font=("Arial", 10))
             my_combo_box_result.grid(row=19, column=1, sticky=W)
-            
+
             my_top = Label(root, text="TOP: ", font=("Arial", 10, "bold"))
             my_top.grid(row=20, sticky=W)
-            
-            my_t = Label(root, text = "Annually Interest",font=("Arial", 10))
+
+            my_t = Label(root, text="Annually Interest", font=("Arial", 10))
             my_t.grid(row=20, column=1, sticky=W)
-            
-            my_interest=Label(root, text = "Interest", font=("Arial", 10, "bold"))
+
+            my_interest = Label(root, text="Interest",
+                                font=("Arial", 10, "bold"))
             my_interest.grid(row=21, sticky=W)
-            
-            process_button = Button(root, text="Calculation", font="Arial, 10", fg="white", bg="Green", command=calculation)
+
+            process_button = Button(
+                root, text="Calculation", font="Arial, 10", fg="white", bg="Green", command=calculation)
             process_button.grid(row=22, column=1, sticky=W)
-            
+
             l = int(ent3.get())
             if l <= 1000:
-                my_button_submit4 = Label(root, text="No interest", font=("Arial", 10))
+                my_button_submit4 = Label(
+                    root, text="No interest", font=("Arial", 10))
                 my_button_submit4.grid(row=21, column=1, sticky=W)
             elif l >= 1001 and l <= 10000:
-                my_button_submit4 = Label(root, text="No interest", font=("Arial", 10))
+                my_button_submit4 = Label(
+                    root, text="No interest", font=("Arial", 10))
                 my_button_submit4.grid(row=21, column=1, sticky=W)
             elif l >= 10001 and l <= 50000:
-                my_button_submit4 = Label(root, text="No interest", font=("Arial", 10))
+                my_button_submit4 = Label(
+                    root, text="No interest", font=("Arial", 10))
                 my_button_submit4.grid(row=21, column=1, sticky=W)
             elif l >= 50001 and l <= 100000:
                 my_button_submit4 = Label(root, text="27%", font=("Arial", 10))
@@ -266,13 +297,12 @@ def Button_annual():
             elif l >= 500001 and l <= 1000000:
                 my_button_submit4 = Label(root, text="30%", font=("Arial", 10))
                 my_button_submit4.grid(row=21, column=1, sticky=W)
-                
-        except ValueError:
-            messagebox.showerror("Error", "Only digits are allowed in loan amount field")
-    
 
-    
-    
+        except ValueError:
+            messagebox.showerror(
+                "Error", "Only digits are allowed in loan amount field")
+
+
 """  
    if t == "MONTHLY" and z <= 50000:
         my_button_submit1 = Label(root, text="5%", font=("Arial", 10))
@@ -284,7 +314,7 @@ def Button_annual():
         my_button_submit1 = Label(root, text="7%", font=("Arial", 10))
         my_button_submit1.grid(row=19, column=1, sticky=W)
 """
-    
+
 """
 
 def calculation():
@@ -415,7 +445,7 @@ P 50,500 - P 100,000
 P 100,001 - P 500,000
 P 500,001 - P 1,000,000
 
-""", font=("Arial",10, "bold"))
+""", font=("Arial", 10, "bold"))
 
 level3 = Label(root, text="""MONTHLY \n INTEREST
 
@@ -426,7 +456,7 @@ level3 = Label(root, text="""MONTHLY \n INTEREST
 6%
 7%
 
-""", font=("Arial",10, "bold"))
+""", font=("Arial", 10, "bold"))
 
 level4 = Label(root, text="""QUARTERLY \n INTEREST
 
@@ -437,7 +467,7 @@ level4 = Label(root, text="""QUARTERLY \n INTEREST
 17%
 18%
 
-""", font=("Arial",10, "bold"))
+""", font=("Arial", 10, "bold"))
 
 level5 = Label(root, text="""SEMI-ANNUAL \n INTEREST
 
@@ -448,7 +478,7 @@ level5 = Label(root, text="""SEMI-ANNUAL \n INTEREST
 20%
 21%
 
-""", font=("Arial",10, "bold"))
+""", font=("Arial", 10, "bold"))
 
 level6 = Label(root, text="""ANNUAL \n INTEREST
 
@@ -459,7 +489,7 @@ level6 = Label(root, text="""ANNUAL \n INTEREST
 29%
 30%
 
-""", font=("Arial",10, "bold"))
+""", font=("Arial", 10, "bold"))
 
 level1.grid(row=0, column=1, pady=30)
 level2.grid(row=1, column=0, pady=30)
@@ -491,7 +521,7 @@ ent2.grid(row=6, column=1, sticky=W)
 ent3.grid(row=7, column=1, sticky=W)
 combo_Box.grid(row=8, column=1, sticky=W)
 
-my_value = Label(root, text="TERMS OF PAYMENT: ", font=("Arial",10, "bold"))
+my_value = Label(root, text="TERMS OF PAYMENT: ", font=("Arial", 10, "bold"))
 my_value.grid(row=9, column=1, sticky=W)
 
 my_button_submit1 = Button(root, text="MONTHLY", font="Arial, 10",
