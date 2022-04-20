@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Enrollment</title>
+</head>
+
+<body>
+
+<p>Alexander Changed it</p>
+
+  <div class="main">
+
+  </div>
+
+  <div class="header">
+    <div class="logo">
+      <img src="images/logo.png" alt="OCC Logo">
+    </div>
+
+    <div class="schoolName">
+      <h3>OCC - Opol Community College</h3>
+    </div>
+
+    <div class="navBar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Admin</a></li>
+        <li><a href="#">Entrance Exam</a></li>
+        <li><a href="#">Enrollement Form</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="admin">
+
+
+  </div>
+
+
+  <div class="data">
+
+    <img src="images/logo.png" alt="Logo">
+    <p>Welcome to OCC</p>
+
+    <div class="link">
+
+      <a href="#">About</a></li>
+      <a target='_blank' href='https://www.facebook.com'>Facebook Page</a>
+    </div>
+
+  </div>
+</body>
+
+</html>
